@@ -5,6 +5,7 @@ import MongoStore from 'connect-mongo'
 import mongoose from 'mongoose'
 import usersRouter from './routes/users.routes.js'
 import sessionsRouter from './routes/sessions.routes.js'
+import cartsRouter from './routes/carts.routes.js'
 
 const app = express()
 const PORT = 8080
@@ -27,6 +28,7 @@ mongoose.connect("mongodb+srv://franciscopugh01:@cluster0.jdow0.mongodb.net/?ret
 
 app.use('/api/users', usersRouter)
 app.use('/api/sessions', sessionsRouter)
+app.use('/api/carts', cartsRouter)
 
 app.listen(PORT, () => {
     console.log("Server on port:", PORT);
